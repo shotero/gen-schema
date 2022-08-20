@@ -1,0 +1,62 @@
+{
+  "name": "@shotero/gen-schema",
+  "description": "JSON Schema generator for postgresql database",
+  "type": "module",
+  "version": "0.0.1",
+  "author": "shotero <lemon.chiffon@shotero.com> (https://shotero.com)",
+  "bugs": {
+    "url": "https://github.com/shotero/gen-schema",
+    "email": "lemon.chiffon@shotero.com"
+  },
+  "contributors": [
+    "shotero <lemon.chiffon@shotero.com> (https://shotero.com)"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ava": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "homepage": "https://github.com/shotero/gen-schema",
+  "keywords": [
+    "postgresql",
+    "objectionjs",
+    "jsonschema",
+    "database"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shotero/gen-schema"
+  },
+  "scripts": {
+    "dev": "node index.js",
+    "lint": "eslint",
+    "test": "NODE_ENV=test ava"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "cosmiconfig": "^7.0.1",
+    "pg-structure": "^7.13.0"
+  }
+}
